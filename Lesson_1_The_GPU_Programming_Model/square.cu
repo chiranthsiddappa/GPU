@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
   cudaMemcpy(d_in, h_in, ARRAY_BYTES, cudaMemcpyHostToDevice);
 
   //launch the kernel
-  cube<<<1, ARRAY_SIZE>>>(d_out, d_in);
+  square<<<1, ARRAY_SIZE>>>(d_out, d_in);
 
   //copy back the result array to the CPU
   cudaMemcpy(h_out, d_out, ARRAY_BYTES, cudaMemcpyDeviceToHost);
